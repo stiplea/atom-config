@@ -4,6 +4,8 @@
       {
         arguments: [
           "-Wall"
+          "-O2"
+          "-std=c++11"
           "{FileNameNoExt}.cpp"
           "-o"
           "{FileNameNoExt}.exe"
@@ -17,7 +19,7 @@
         name: "build"
         options:
           cwd: "{FileDir}"
-          keymap: "ctrl-c"
+          keymap: "ctrl-2"
           save: true
       }
       {
@@ -29,7 +31,7 @@
         name: "execute"
         options:
           cwd: "{FileDir}"
-          keymap: "ctrl-r"
+          keymap: "ctrl-3"
           save: true
       }
     ]
