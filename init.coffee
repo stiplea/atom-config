@@ -9,3 +9,10 @@
 # atom.workspace.observeTextEditors (editor) ->
 #   editor.onDidSave ->
 #     console.log "Saved! #{editor.getPath()}"
+
+atom.commands.add 'atom-workspace', 'dot-atom:demo', ->
+  console.log "Hello from dot-atom:demo"
+
+atom.commands.add 'atom-workspace', 'custom:build-and-run', ->
+  atom.commands.dispatch(atom.workspace.element, 'atom-shell-commands:build')
+  atom.commands.dispatch(atom.workspace.element, 'atom-shell-commands:execute')

@@ -2,29 +2,31 @@
   "atom-shell-commands":
     commands: [
       {
-        name: "build"
-        command: "g++"
         arguments: [
           "-Wall"
           "{FileNameNoExt}.cpp"
           "-o"
           "{FileNameNoExt}.exe"
         ]
+        command: "g++"
         matchs: [
           "^(?<file>[\\/0-9a-zA-Z\\._\\\\:]+):(?<line>\\d+):(?<col>\\d+):"
           "^(?<file>[\\/0-9a-zA-Z\\._\\\\:]+):(?<line>\\d+):"
           "^(?<file>[\\/0-9a-zA-Z\\._\\\\:]+)\\s*\\((?<line>\\d+)\\)\\s*:*:"
         ]
+        name: "build"
         options:
           cwd: "{FileDir}"
           keymap: "ctrl-c"
           save: true
       }
       {
-        name: "execute"
+        arguments: [
+          "/Users/stefant/.atom/./launch.cmd {FileDir} {FileNameNoExt}.exe"
+        ]
         command: "/Users/stefant/.atom/./iterm.sh"
-        arguments: ["/Users/stefant/.atom/./launch.cmd {FileDir} {FileNameNoExt}.exe"]
         matchs: []
+        name: "execute"
         options:
           cwd: "{FileDir}"
           keymap: "ctrl-r"
@@ -52,4 +54,6 @@
   "exception-reporting":
     userId: "37c0a8a0-c624-4dd7-beb8-c8833656ef14"
   "flex-tool-bar": {}
+  "linter-gcc":
+    gccLintOnTheFly: true
   "linter-ui-default": {}

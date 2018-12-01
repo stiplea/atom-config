@@ -22,7 +22,13 @@
     type: "button"
     icon: "triangle-right"
     callback: "atom-shell-commands:execute"
-    tooltip: "Compile and run program"
+    tooltip: "Execute program"
+  }
+  {
+    type: "button"
+    icon: "file-symlink-file"
+    callback: "custom:build-and-run"
+    tooltip : "Build and run"
   }
   {
     type: "spacer"
