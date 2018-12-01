@@ -1,0 +1,55 @@
+"*":
+  "atom-shell-commands":
+    commands: [
+      {
+        name: "build"
+        command: "g++"
+        arguments: [
+          "-Wall"
+          "{FileNameNoExt}.cpp"
+          "-o"
+          "{FileNameNoExt}.exe"
+        ]
+        matchs: [
+          "^(?<file>[\\/0-9a-zA-Z\\._\\\\:]+):(?<line>\\d+):(?<col>\\d+):"
+          "^(?<file>[\\/0-9a-zA-Z\\._\\\\:]+):(?<line>\\d+):"
+          "^(?<file>[\\/0-9a-zA-Z\\._\\\\:]+)\\s*\\((?<line>\\d+)\\)\\s*:*:"
+        ]
+        options:
+          cwd: "{FileDir}"
+          keymap: "ctrl-c"
+          save: true
+      }
+      {
+        name: "execute"
+        command: "/Users/stefant/.atom/./iterm.sh"
+        arguments: ["/Users/stefant/.atom/./launch.cmd {FileDir} {FileNameNoExt}.exe"]
+        matchs: []
+        options:
+          cwd: "{FileDir}"
+          keymap: "ctrl-r"
+          save: true
+      }
+    ]
+  core:
+    customFileTypes:
+      "source.ini": [
+        ".hgrc"
+        ".buckconfig"
+      ]
+      "source.json": [
+        "BUCK.autodeps"
+      ]
+      "source.python": [
+        "BUCK"
+      ]
+    disabledPackages: [
+      "nuclide"
+      "build"
+      "script"
+    ]
+    telemetryConsent: "no"
+  "exception-reporting":
+    userId: "37c0a8a0-c624-4dd7-beb8-c8833656ef14"
+  "flex-tool-bar": {}
+  "linter-ui-default": {}
