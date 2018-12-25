@@ -35,6 +35,8 @@
           save: true
       }
     ]
+  "bracket-matcher":
+    autocompleteBrackets: false
   core:
     customFileTypes:
       "source.ini": [
@@ -53,6 +55,9 @@
       "script"
     ]
     telemetryConsent: "no"
+  editor:
+    fontSize: 18
+    tabLength: 4
   "exception-reporting":
     userId: "37c0a8a0-c624-4dd7-beb8-c8833656ef14"
   "flex-tool-bar": {}
